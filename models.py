@@ -10,7 +10,7 @@ class Team:
         self.players = []
         self.total_runs = 0
         self.total_wickets = 0
-        
+
     def add_player(self, player):
         self.players.append(player)
 
@@ -34,18 +34,3 @@ class Match:
             self.winner = self.team2.name
         else:
             self.winner = "Draw"
-
-
-team1 = Team("Game Changers")
-team2 = Team("Markhors")
-
-player1 = Player("Atif")
-team1.add_player(player1)
-
-team1.total_runs = 72
-team2.total_runs = 65
-
-match = Match(team1, team2)
-match.calculate_winner()
-
-print(match.winner)
