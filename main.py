@@ -19,9 +19,19 @@ def create_match():
         player_name = input(f"Enter name of player {i+1} for {team1_name}: ")
         team1.add_player(Player(player_name))
 
+    for player in team1.players:
+        runs = int(input(f"Enter runs scored by {player.name}: "))
+        wickets = int(input(f"Enter wickets taken by {player.name}: "))
+        team1.update_stats(player.name, runs, wickets)
+
     for i in range(num_players):
         player_name = input(f"Enter name of player {i+1} for {team2_name}: ")
         team2.add_player(Player(player_name))
+
+    for player in team2.players:
+        runs = int(input(f"Enter runs scored by {player.name}: "))
+        wickets = int(input(f"Enter wickets taken by {player.name}: "))
+        team2.update_stats(player.name, runs, wickets)
 
     team1.total_runs = int(input(f"Enter total runs scored by {team1_name}: "))
     team2.total_runs = int(input(f"Enter total runs scored by {team2_name}: "))
@@ -30,3 +40,5 @@ def create_match():
     match.calculate_winner()
     print(f"The winner is: {match.winner}")
 
+
+create_match()

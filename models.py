@@ -33,4 +33,4 @@ class Match:
         elif self.team2.total_runs > self.team1.total_runs:
             self.winner = self.team2.name
         else:
-            self.winner = "Draw"
+            self.winner = "Its a draw"
