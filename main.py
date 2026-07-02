@@ -1,5 +1,5 @@
 from models import Match, Team, Player
-from storage import save_match_data
+from storage import save_match_data, load_match_data
 
 def show_menu():
     print("/n ===== Cricket Score Tracker =====")
@@ -42,3 +42,17 @@ def create_match():
     print(f"The winner is: {match.winner}")
 
     save_match_data(match)
+
+def view_matches():
+    matches = load_match_data()
+
+    if not matches:
+        print("No matches found.")
+        return
+
+    for i, match in enumerate(matches, start=1):
+        print(f"\n===== Match {i} =====")
+        print(f"{match['team1']} vs {match['team2']}")
+        print(f"Score: {match['score1']} - {match['score2']}")
+        print(f"Winner: {match['winner']}")
+

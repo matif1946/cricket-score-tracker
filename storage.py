@@ -27,6 +27,7 @@ def save_match_data(match):
             for player in match.team2.players
         ]
     }
+
     try:
         with open("data/matches.json", "r") as file:
             matches = json.load(file)
@@ -36,3 +37,10 @@ def save_match_data(match):
     matches.append(match_data)
     with open("data/matches.json", "w") as file:
         json.dump(matches, file, indent=4)
+
+def load_match_data():
+    try:
+        with open("data/matches.json", "r") as file:
+            return json.load(file)
+    except:
+        return []
