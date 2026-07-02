@@ -1,4 +1,5 @@
 from models import Match, Team, Player
+from storage import save_match_data
 
 def show_menu():
     print("/n ===== Cricket Score Tracker =====")
@@ -40,5 +41,4 @@ def create_match():
     match.calculate_winner()
     print(f"The winner is: {match.winner}")
 
-
-create_match()
+    save_match_data(match)

@@ -1,0 +1,23 @@
+[
+    {
+        "team1": "khans",
+        "team2": "kkk",
+        "score1": 12,
+        "score2": 11,
+        "winner": "khans",
+        "players_team1": [
+            {
+                "name": "Atif",
+                "runs": 12,
+                "wickets": 1
+            }
+        ],
+        "players_team2": [
+            {
+                "name": "1",
+                "runs": 11,
+                "wickets": 1
+            }
+        ]
+    }
+]
